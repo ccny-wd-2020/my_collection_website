@@ -4,3 +4,4 @@
 - Take pictures of real and fake tags
 - Do pictures comparing real and fake
 - ebay api for items to watch for
+- get user feedback
