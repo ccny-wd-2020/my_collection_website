@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Jquery Ajax</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+	<form name="main">
+		<table>
+			<tr>
+				<div class="form" id="form" style="display: block;">
+					<font id="font" style="color: grey; font-size:1.4em;  font-family: georgia,'times new roman',times,serif;">Search Query</font>&nbsp;
+					<input type="text" maxlength="100" placeholder="example : Harry Potter" name="query" x-webkit-speech="" id="query">&nbsp;
+					<input value="Submit to eBay" id="submit-to-ebay" type="button">
+					<div class='ajaxLoad' id ='ajaxLoad'>
+					</div>
+				</div>
+				<td>
+					<textarea name="eBayXMLResponse" wrap="soft" rows="30" cols="100" style="overflow:scroll" ID="eBayXMLResponse"></textarea>
+				</td>
+			</tr>
+		</table>
+	</form>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="first_ajax.js"></script>
+</body>
+</html>
