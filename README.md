@@ -5,3 +5,6 @@
 - Do pictures comparing real and fake
 - ebay api for items to watch for
 - get user feedback
+- Keep pictures of authenticated ones online and continue to do comparisons
+- show which ones are currently fake and currently real on eBay
+- send me a pic of your item and i will do a free authenticity check
