@@ -15,6 +15,14 @@ app.get('/', function(req,res){
 	res.sendFile(path.join(__dirname, '../client/html/index.html'));
 });
 
+app.get('/ebay', function(req,res){
+	res.sendFile(path.join(__dirname, '../client/html/ebay_api.html'));
+});
+
+app.get('/watching', function(req,res){
+	res.sendFile(path.join(__dirname, '../client/html/pending_ebay_purchases.html'));
+});
+
 var PORT = process.env.PORT || 8000;
 
 app.listen(PORT, function(){
