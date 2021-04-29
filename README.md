@@ -8,3 +8,7 @@
 - Keep pictures of authenticated ones online and continue to do comparisons
 - show which ones are currently fake and currently real on eBay
 - send me a pic of your item and i will do a free authenticity check
+
+# Ebay Sales
+- Admin Form
+- Sort by, trends, filters and all
