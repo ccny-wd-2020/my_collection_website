@@ -1,5 +1,4 @@
 CREATE TABLE ebay_sales (
-	id INT AUTO_INCREMENT PRIMARY KEY,
 	type VARCHAR(255),
     name VARCHAR(255),
     color VARCHAR(255),
@@ -15,7 +14,7 @@ CREATE TABLE ebay_sales (
     auction boolean,
     bestOfferAccepted boolean,
     mint boolean,
-    ebayItemNumber VARCHAR(255),
+    ebayItemNumber VARCHAR(255) UNIQUE NOT NULL PRIMARY KEY,
     additionalNotes text
 );
 
