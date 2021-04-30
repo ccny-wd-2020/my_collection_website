@@ -15,9 +15,7 @@ fetch('/ebay-sales').then(function (response) { return response.json(); }).then(
   thead.append(headerTr)
 
   populateTableBody(data);
-
   createDropdown(data);
-
 }).catch(function (err) {
 	console.warn('Error: ', err);
 });
@@ -58,9 +56,11 @@ function createDropdown(data){
 		valueDropdown.append(allOption);
 
 		values.forEach(function(value){
-			let valueOption = document.createElement("option");
-			valueOption.textContent = value;
-			valueDropdown.append(valueOption)
+			if(value){
+				let valueOption = document.createElement("option");
+				valueOption.textContent = value;
+				valueDropdown.append(valueOption)
+			}
 		});
 
 		valueTh.append(valueDropdown);
@@ -92,24 +92,24 @@ function populateTableBody(data){
   });
 }
 
-function dropdownLogic(data){
-	const keys = Object.keys(data[0]);
-	const selectedDropdowns = [];
-	keys.forEach(function(field){
-		let dropdownValue = document.querySelector("#"+field+"-dropdown").value;
-		if(!dropdownValue.includes("All") && !dropdownValue.includes("Select")){
-			selectedDropdowns.push(dropdownValue);
-		}
-	});
-	return selectedDropdowns;
-}
-
 setTimeout(function(){
-	const selectedDropdowns = []
+	let selectedDropdowns = []
 	document.querySelectorAll(".filter-dropdown").forEach(item => {
 	  item.addEventListener('change', event => {
-			if(!item.value.includes("All") && !item.value.includes("Select")){
-				selectedDropdowns.push({key: item.getAttribute("id").split("-")[0], value: item.value})
+			let key = item.getAttribute("id").split("-")[0];
+			let value = item.value;
+			for(var i = 0; i < selectedDropdowns.length; i++){
+				if(selectedDropdowns[i].key == key){
+					if(value.includes("All")){
+						selectedDropdowns.splice(i, 1)
+					} else {
+						selectedDropdowns[i].value = value;
+					}
+				}
+			}
+			let selectedDropdownsKeys = selectedDropdowns.map((sd) => sd.key);
+			if(!selectedDropdownsKeys.includes(key) && !item.value.includes("All") && !item.value.includes("Select")){
+				selectedDropdowns.push({key: key, value: value})
 			}
 			const filteredData = data.filter(function(d){
 				let result = true;
