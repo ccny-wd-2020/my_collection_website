@@ -114,5 +114,7 @@ INSERT INTO ebay_sales (type, name, color, hangTagAttached, hangTagGeneration, t
 VALUES ('new face teddy', 'teddy', 'brown', 0, 2, 1993, 1, 'China', 0, 100, 'Feb 26, 2021', 1, 0, 1, '143959465430', 'near mint. a little crease.');
 INSERT INTO ebay_sales (type, name, color, hangTagAttached, tushTagYear, tushTagGeneration, tushTagCountry, authentic, salePrice, saleDate, auction, bestOfferAccepted, mint, ebayItemNumber)
 VALUES ('new face teddy', 'teddy', 'teal', 1, 1993, 1, 'China', 0, 96, 'Jan 26, 2021', 0, 1, 1, '324454726132');
+INSERT INTO ebay_sales (type, name, color, hangTagAttached, hangTagGeneration, tushTagYear, tushTagGeneration, tushTagCountry, authentic, salePrice, saleDate, auction, bestOfferAccepted, mint, ebayItemNumber, additionalNotes)
+VALUES ('new face teddy', 'teddy', 'cranberry', 0, 2, 1993, 1, 'China', 0, 300, 'Apr 27, 2021', 1, 0, 1, '124695651697', 'near mint');
 
 SELECT * FROM ebay_sales;

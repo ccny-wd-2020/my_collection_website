@@ -4,18 +4,10 @@ fetch('/ebay-sales').then(function (response) { return response.json(); }).then(
   data.sort((a, b) => (b.salePrice > a.salePrice) ? 1 : -1)
   const keys = Object.keys(data[0]);
 
-  const thead = document.querySelector('thead');
-  const headerTr = document.createElement('tr');
-  keys.forEach(function(key){
-    let headerTh = document.createElement('th');
-    headerTh.setAttribute('id', key + "-th");
-    headerTh.textContent = key
-    headerTr.append(headerTh)
-  })
-  thead.append(headerTr)
-
+	populateTableHeader(keys);
   populateTableBody(data);
-  createDropdown(data);
+  createDropdowns(data);
+
 }).catch(function (err) {
 	console.warn('Error: ', err);
 });
@@ -34,7 +26,7 @@ function convertBooleanToText(field, value){
   }
 }
 
-function createDropdown(data){
+function createDropdowns(data){
 	const keys = Object.keys(data[0]);
 
 	keys.forEach(function(field){
@@ -52,8 +44,12 @@ function createDropdown(data){
 		let allOption = document.createElement("option");
 		allOption.textContent = "All "+field+"s";
 
+		let nullOption = document.createElement("option");
+		nullOption.textContent = "Null";
+
 		valueDropdown.append(defaultOption);
 		valueDropdown.append(allOption);
+		valueDropdown.append(nullOption);
 
 		values.forEach(function(value){
 			if(value){
@@ -78,6 +74,18 @@ function createDropdown(data){
 	})
 }
 
+function populateTableHeader(keys){
+	const thead = document.querySelector('thead');
+	const headerTr = document.createElement('tr');
+	keys.forEach(function(key){
+		let headerTh = document.createElement('th');
+		headerTh.setAttribute('id', key + "-th");
+		headerTh.textContent = key
+		headerTr.append(headerTh)
+	})
+	thead.append(headerTr)
+}
+
 function populateTableBody(data){
   const tbody = document.querySelector('tbody');
   tbody.innerHTML = "";
@@ -85,7 +93,7 @@ function populateTableBody(data){
     let bodyTr = document.createElement('tr');
     for(var i in ebay_sale){
       let bodyTd = document.createElement('td');
-      bodyTd.textContent = convertBooleanToText(i, ebay_sale[i]);
+			bodyTd.textContent = convertBooleanToText(i, ebay_sale[i]);
       bodyTr.append(bodyTd)
     }
     tbody.append(bodyTr);
@@ -109,6 +117,7 @@ setTimeout(function(){
 			}
 			let selectedDropdownsKeys = selectedDropdowns.map((sd) => sd.key);
 			if(!selectedDropdownsKeys.includes(key) && !item.value.includes("All") && !item.value.includes("Select")){
+				value = value == "Null" ? null : value;
 				selectedDropdowns.push({key: key, value: value})
 			}
 			const filteredData = data.filter(function(d){

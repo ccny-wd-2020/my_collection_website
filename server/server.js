@@ -12,7 +12,8 @@ app.use(bodyParser.json({ type: 'application/vnd.api+json'}));
 app.use(express.static('./client'));
 
 var mysql = require('mysql');
-const databaseConnection = mysql.createConnection("mysql://root:@localhost:3306/beanie_babies");
+let connectionString = process.env.JAWSDB_URL || "mysql://root:@localhost:3306/beanie_babies";
+const databaseConnection = mysql.createConnection(connectionString);
 databaseConnection.connect();
 
 app.get('/', function(req,res){
