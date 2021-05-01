@@ -12,3 +12,5 @@
 # Ebay Sales
 - Admin Form
 - Sort by, trends, filters and all
+  - Before or After dates
+- Search by ebay item number
