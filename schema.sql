@@ -169,4 +169,25 @@ VALUES ('new face teddy', 'teddy', 'teal', 0, 2, 1993, 2, 'China', 0, 21, 'Apr 0
 INSERT INTO ebay_sales (type, name, color, hangTagAttached, tushTagYear, tushTagGeneration, tushTagCountry, authentic, salePrice, saleDate, auction, bestOfferAccepted, mint, ebayItemNumber)
 VALUES ('new face teddy', 'teddy', 'magenta', 1, 1993, 1, 'China', 0, 79, 'May 21, 2021', 0, 1, 1, '265162828567');
 
+INSERT INTO ebay_sales (type, name, color, hangTagAttached, tushTagYear, tushTagGeneration, tushTagCountry, authentic, salePrice, saleDate, auction, bestOfferAccepted, mint, ebayItemNumber, additionalNotes)
+VALUES ('bear', 'cubbie', 'brown', 0, 1993, 1, 'Korean', 0, 1975, 'Jun 06, 2021', 0, 1, 0, '324647139607', 'rarest of hang tags. 1st ever hang tag produc');
+INSERT INTO ebay_sales (type, name, color, hangTagAttached, tushTagYear, tushTagGeneration, tushTagCountry, authentic, salePrice, saleDate, auction, bestOfferAccepted, mint, ebayItemNumber)
+VALUES ('bear', 'chilly', 'white', 0, 1993, 1, 'China', 0, 1825, 'May 03, 2021', 0, 1, 0, '284273349474');
+INSERT INTO ebay_sales (type, name, color, hangTagAttached, tushTagYear, tushTagGeneration, tushTagCountry, authentic, salePrice, saleDate, auction, bestOfferAccepted, mint, ebayItemNumber, additionalNotes)
+VALUES ('seal', 'seamore', 'white', 0, 1993, 1, 'Korean', 0, 1800, 'May 17, 2021', 1, 0, 0, '324629378429', 'i am not completely buying that it was sold for $1800, but maybe somewhere around there');
+INSERT INTO ebay_sales (type, name, color, hangTagAttached, tushTagYear, tushTagGeneration, tushTagCountry, authentic, salePrice, saleDate, auction, bestOfferAccepted, mint, ebayItemNumber, additionalNotes)
+VALUES ('dog', 'spot', 'white', 0, 1993, 1, 'Korean', 0, 1500, 'May 06, 2021', 0, 1, 0, '373570659510', 'no spot');
+INSERT INTO ebay_sales (type, name, color, hangTagAttached, tushTagYear, tushTagGeneration, tushTagCountry, authentic, salePrice, saleDate, auction, bestOfferAccepted, mint, ebayItemNumber)
+VALUES ('bear', 'blackie', 'black', 0, 1993, 1, 'China', 0, 1425, 'May 12, 2021', 0, 1, 0, '284284436436');
+INSERT INTO ebay_sales (type, name, color, hangTagAttached, tushTagYear, tushTagGeneration, tushTagCountry, authentic, salePrice, saleDate, auction, bestOfferAccepted, mint, ebayItemNumber)
+VALUES ('snake', 'slither', 'green', 0, 1993, 1, 'China', 0, 1225, 'Apr 21, 2021', 0, 1, 0, '402793064796');
+INSERT INTO ebay_sales (type, name, color, hangTagAttached, tushTagYear, tushTagGeneration, tushTagCountry, authentic, salePrice, saleDate, auction, bestOfferAccepted, mint, ebayItemNumber)
+VALUES ('bear', 'brownie', 'brown', 0, 1993, 1, 'Korean', 0, 1200, 'Jun 16, 2021', 1, 0, 0, '274835192447');
+INSERT INTO ebay_sales (type, name, color, hangTagAttached, tushTagYear, tushTagGeneration, tushTagCountry, authentic, salePrice, saleDate, auction, bestOfferAccepted, mint, ebayItemNumber)
+VALUES ('camel', 'humphrey', 'brown', 0, 1993, 3, 'German', 0, 1200, 'May 16, 2021', 1, 0, 0, '373537528356');
+INSERT INTO ebay_sales (type, name, color, hangTagAttached, tushTagYear, tushTagGeneration, tushTagCountry, authentic, salePrice, saleDate, auction, bestOfferAccepted, mint, ebayItemNumber)
+VALUES ('dino', 'steg, rex, bronty', 'tye dye', 0, 1995, 3, 'China', 0, 1000, 'Apr 23, 2021', 1, 0, 0, '154416456380');
+INSERT INTO ebay_sales (type, name, color, hangTagAttached, tushTagYear, tushTagGeneration, tushTagCountry, authentic, salePrice, saleDate, auction, bestOfferAccepted, mint, ebayItemNumber, additionalNotes)
+VALUES ('dog', 'spot', 'white', 0, 1993, 1, 'Korean', 0, 950, 'May 06, 2021', 1, 0, 0, '393260109519f', 'no spot');
+
 SELECT * FROM ebay_sales;
